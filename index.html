@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoTrack | Daily Eco Habit Tracker</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <nav class="navbar container">
+
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                Eco<span>Track</span>
+            </a>
+
+
+            <!-- Navigation -->
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#habits">Habits</a></li>
+                <li><a href="#progress">Progress</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+
+            <!-- Buttons -->
+
+            <div class="nav-actions">
+
+                <button class="theme-btn" id="themeBtn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        🌱 Small Habits. Big Impact.
+                    </div>
+
+                    <h1>
+                        Make Every Day
+                        <span>Greener.</span>
+                    </h1>
+
+                    <p>
+                        Track your daily eco-friendly habits, complete
+                        challenges and build a greener lifestyle one step
+                        at a time.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#habits" class="btn btn-primary">
+                            Start Tracking
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <button class="btn btn-outline" id="randomTipBtn">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Get Eco Tip
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <h3 id="heroCompleted">0</h3>
+                            <p>Habits Done</p>
+                        </div>
+
+                        <div>
+                            <h3 id="heroStreak">0</h3>
+                            <p>Day Streak</p>
+                        </div>
+
+                        <div>
+                            <h3>🌍</h3>
+                            <p>Better Planet</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Card -->
+
+                <div class="hero-visual">
+
+                    <div class="hero-circle circle-one"></div>
+                    <div class="hero-circle circle-two"></div>
+
+
+                    <div class="earth-card">
+
+                        <div class="earth">🌍</div>
+
+                        <h3>Today's Impact</h3>
+
+                        <div class="impact-line">
+
+                            <span>Eco Progress</span>
+
+                            <strong id="heroPercentage">0%</strong>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                            <div id="miniProgressBar"></div>
+
+                        </div>
+
+                        <p>Keep going! Every habit matters. 💚</p>
+
+                    </div>
+
+
+                    <div class="floating-badge badge-one">
+                        ♻️ Recycle More
+                    </div>
+
+                    <div class="floating-badge badge-two">
+                        💧 Save Water
+                    </div>
+
+                    <div class="floating-badge badge-three">
+                        🔌 Save Energy
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK STATS ================= -->
+
+        <section class="quick-stats">
+
+            <div class="container stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">🌱</div>
+
+                    <div>
+                        <h3 id="completedCount">0</h3>
+                        <p>Habits Completed</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">📊</div>
+
+                    <div>
+                        <h3 id="percentageCount">0%</h3>
+                        <p>Daily Progress</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">🔥</div>
+
+                    <div>
+                        <h3 id="streakCount">0</h3>
+                        <p>Current Streak</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">🏆</div>
+
+                    <div>
+                        <h3 id="challengeCount">0</h3>
+                        <p>Challenges Done</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HABITS ================= -->
+
+        <section class="habits section" id="habits">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">DAILY HABITS</span>
+
+                    <h2>Today's Eco Actions</h2>
+
+                    <p>
+                        Complete simple habits and watch your progress grow.
+                    </p>
+
+                </div>
+
+
+                <!-- Dynamic Habit Cards -->
+
+                <div class="habits-grid" id="habitsGrid">
+
+                    <!-- JavaScript will add cards -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROGRESS ================= -->
+
+        <section class="progress-section section" id="progress">
+
+            <div class="container progress-container">
+
+                <div class="progress-info">
+
+                    <span class="eyebrow">YOUR PROGRESS</span>
+
+                    <h2>Every Green Choice Counts 🌍</h2>
+
+                    <p>
+                        Your daily progress is calculated automatically
+                        based on the eco-friendly habits you complete.
+                    </p>
+
+
+                    <div class="big-progress">
+
+                        <div class="progress-top">
+
+                            <span>Today's Progress</span>
+
+                            <strong id="progressText">0%</strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div id="progressBar"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="progress-message" id="progressMessage">
+
+                        Start your eco journey today! 🌱
+
+                    </p>
+
+                </div>
+
+
+                <!-- Progress Circle -->
+
+                <div class="progress-visual">
+
+                    <div class="progress-circle" id="progressCircle">
+
+                        <div class="circle-content">
+
+                            <h2 id="circlePercentage">0%</h2>
+
+                            <p>Completed</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-note">
+
+                        <span>💡</span>
+
+                        <p>
+                            Complete all habits to reach 100%!
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STREAK ================= -->
+
+        <section class="streak section">
+
+            <div class="container streak-container">
+
+                <div class="streak-fire">🔥</div>
+
+                <div class="streak-content">
+
+                    <span class="eyebrow">KEEP GOING</span>
+
+                    <h2>Build Your Green Streak</h2>
+
+                    <p>
+                        Complete at least one eco habit every day to keep
+                        your streak alive.
+                    </p>
+
+                </div>
+
+
+                <div class="streak-number">
+
+                    <h2 id="bigStreak">0</h2>
+
+                    <span>Days</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHALLENGES ================= -->
+
+        <section class="challenges section" id="challenges">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">ECO CHALLENGES</span>
+
+                    <h2>Take a Green Challenge 🏆</h2>
+
+                    <p>
+                        Push yourself and complete extra eco-friendly goals.
+                    </p>
+
+                </div>
+
+
+                <div class="challenges-grid" id="challengesGrid">
+
+                    <!-- JavaScript will add challenges -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ECO TIPS ================= -->
+
+        <section class="tips section">
+
+            <div class="container">
+
+                <div class="tips-box">
+
+                    <div class="tip-icon">
+                        💡
+                    </div>
+
+
+                    <div class="tip-content">
+
+                        <span class="eyebrow">
+                            ECO TIP OF THE DAY
+                        </span>
+
+                        <h2 id="ecoTip">
+
+                            Turn off lights when leaving a room to save energy.
+
+                        </h2>
+
+                    </div>
+
+
+                    <button class="tip-btn" id="newTipBtn">
+
+                        New Tip
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="contact section" id="contact">
+
+            <div class="container contact-container">
+
+
+                <!-- Contact Info -->
+
+                <div class="contact-info">
+
+                    <span class="eyebrow">
+                        GET IN TOUCH
+                    </span>
+
+                    <h2>Share Your Green Ideas 💚</h2>
+
+                    <p>
+                        Have an idea to make EcoTrack better? Send us your
+                        feedback and help us build a greener community.
+                    </p>
+
+
+                    <div class="contact-points">
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Share eco-friendly ideas
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Suggest new habits
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Join green challenges
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Contact Form -->
+
+                <form class="contact-form" id="contactForm">
+
+                    <h3>Send Feedback</h3>
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                        >
+
+                        <small class="error" id="nameError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                        >
+
+                        <small class="error" id="emailError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows="5"
+                            placeholder="Write your feedback..."
+                        ></textarea>
+
+                        <small class="error" id="messageError"></small>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary full-btn">
+
+                        Send Feedback
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </button>
+
+
+                    <p class="success-message" id="successMessage"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <div>
+
+                <a href="#home" class="logo footer-logo">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                    Eco<span>Track</span>
+
+                </a>
+
+                <p>
+                    Small habits create a big impact. 🌍💚
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#habits">Habits</a>
+
+                <a href="#progress">Progress</a>
+
+                <a href="#challenges">Challenges</a>
+
+            </div>
+
+
+            <div class="social-links">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 EcoTrack | Daily Eco Habit Tracker
+
+        </div>
+
+    </footer>
+
+
+    <!-- Back To Top -->
+
+       <button class="back-to-top" id="backToTop">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
